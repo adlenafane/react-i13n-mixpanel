@@ -1,0 +1,63 @@
+{
+  "name": "react-i13n-mixpanel",
+  "description": "Mixpanel plugin for react i13n",
+  "version": "0.0.1",
+  "browser": "index.client.js",
+  "main": "index.server.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:adlenafane/react-i13n-mixpanel.git"
+  },
+  "scripts": {
+    "cover": "istanbul cover --dir ${COVERAGE_DIR:-artifacts} -- _mocha tests/unit --require ./tests/setup --recursive --reporter tap",
+    "lint": "jshint",
+    "test": "mocha tests/unit --require ./tests/setup --recursive --reporter spec"
+  },
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "coveralls": "^2.11.1",
+    "istanbul": "^0.3.0",
+    "jsdom": "~9.1.0",
+    "jshint": "^2.5.1",
+    "mocha": "^2.0",
+    "object-assign": "^4.0.1"
+  },
+  "keywords": [
+    "react",
+    "i13n",
+    "instrumentation",
+    "mp",
+    "mixpanel"
+  ],
+  "precommit": [
+    "lint",
+    "test"
+  ],
+  "yhint": {
+    "excludes": [
+      "/dist/",
+      "/tests/"
+    ]
+  },
+  "jshintConfig": {
+    "node": true
+  },
+  "bugs": {
+    "url": "https://github.com/adlenafane/react-i13n-mixpanel/issues"
+  },
+  "homepage": "https://github.com/adlenafane/react-i13n-mixpanel",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "react-i13n": "^2.0.4"
+  },
+  "author": "Adlen Afane <adlenafane@gmail.com>",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
+}

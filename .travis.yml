@@ -1,0 +1,16 @@
+sudo: false
+language: node_js
+node_js:
+- '4.0'
+- stable
+after_success:
+- cat artifacts/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+after_success: "git config user.email "adlen.afane@gmail.com"; git config user.name "Adlen Afane""
+before_deploy: "npm version patch"
+deploy:
+  provider: npm
+  email: adlen.afane@gmail.com
+  on:
+    branch: master
+  api_key:
+    secure: QcKdywAOhOSLldFOIAnAz1Ap4oh94pMKKKtdHdvFglH4HQpWpZ2qbWIAoKocRGuWfzLAY+0bzDwsrgORVwyVKU7w6pMrD8aCxnIeYirRv7KBuKGHXEp/OrnXsNzYz3a/jWkg/0H8LKrNTkeGg5deKbgsMSii2ekE61fX03mjx3ZmUzHQ+vSnP3lhl/09RWMoxcESXQBgeucvtXDWNMGHpwUWHllP+3iU8sp/GGUcifs+DlxEQ8Grfa3HoCVgLhjcVueRDHbmV7UQbcelOfkkQPoaxJcDvhAPvYNK6YGl9RKIV0hKjJu/SjImMiSyvHsyQm1xMw6ofLCuG7XBI97Mkpxkg3gpzLX/HMyPisSKWlwdQHVsSRmKwTmQjOlTn3+idS3tsDKWxN67fj57ndN9Q0ojtzzZKsfB7Iv3NVn76N3D5Ua3QuxwDWs1GHe1MqY0gfiOGfZcM+Ko3J3zpPLAK8V+wqCoX9Ga9FviFrg4uStoo0+guf1Y0NXOhCAwJTl3OgX5xDbtV+soEH6W83f+6n65/z6GHg0IhhotfB46lsr+RbaH0dsxrjiS6Mk+FuChv3clf0yKOSne7ZHwPOwyUAhggtgwgyXiZ9hAXKmWs28UIkqH+cCG/h1YSpLu5HuBUOit1OpLAdEaiL/sxhOUAtumLrCuZoz8xBBXmhEnhDk=
