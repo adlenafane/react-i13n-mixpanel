@@ -1,7 +1,7 @@
 {
   "name": "react-i13n-mixpanel",
   "description": "Mixpanel plugin for react i13n",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "browser": "index.client.js",
   "main": "index.server.js",
   "repository": {
