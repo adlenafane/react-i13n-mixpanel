@@ -5,7 +5,8 @@ node_js:
 - stable
 after_success:
 - cat artifacts/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-after_success: "git config user.email "adlen.afane@gmail.com"; git config user.name "Adlen Afane""
+- git config user.email "adlen.afane@gmail.com"
+- git config user.name "Adlen Afane"
 before_deploy: "npm version patch"
 deploy:
   provider: npm
