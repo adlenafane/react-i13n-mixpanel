@@ -40,6 +40,18 @@ ReactI13nMixpanel.prototype.getPlugin = function () {
   return {
     name: 'mixpanel',
     eventHandlers: {
+      setUsername: function (properties) {
+        mixpanel.identify(properties.userId);
+      },
+      setSuperProperties: function (properties) {
+        mixpanel.register_once(properties);
+      },
+      setUserProperties: function (properties) {
+        mixpanel.people.set_once(properties);
+      },
+      setUserPropertiesOnce: function (properties) {
+        mixpanel.people.set(properties);
+      },
       click: function (payload, callback) {
         var i13nNode = payload.i13nNode;
         if (i13nNode) {

@@ -48,7 +48,7 @@ describe('mixpanel plugin client', function () {
     });
   });
 
-  it('ga will fire event beacon for click handler', function (done) {
+  it('mixpanel will fire event beacon for click handler', function (done) {
     var mockToken = 'foo';
     global.mixpanel.init = function (token, config, name) {
       expect(token).to.eql(mockToken);
