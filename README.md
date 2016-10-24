@@ -98,3 +98,16 @@ var Foo = React.createClass({
 ```
 
 For better instrumentation integration, you can leverage the [inherit architecture](https://github.com/yahoo/react-i13n/blob/master/docs/guides/integrateWithComponents.md), e.g., create a parent and define the `category` with default tracker, or specify `tracker`, so that all the links inside will apply it.
+
+## Tracker Settings
+
+You can also use the following methods to set properties of Mixpanel like [Super properties or User properties](https://mixpanel.com/help/reference/javascript).
+
+```js
+var userId = 'aa4ebd41203df5b8639e9fe48d4c6c7de7c4b053';
+var dimension1 = 'administrator';
+ReactI13n.getInstance().execute('setUsername', { userId: userId });
+ReactI13n.getInstance().execute('setSuperProperties', { dimension1: dimension1 });
+ReactI13n.getInstance().execute('setUserProperties', { dimension1: dimension1 });
+ReactI13n.getInstance().execute('setUserPropertiesOnce', { dimension1: dimension1 });
+```
